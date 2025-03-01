@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Code2 } from 'lucide-react';
+import logoColorida from '../img/logodynamocor.png'; // Logo colorida
+import logoBranca from '../img/logodynamobranca.png'; // Logo branca
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,11 +10,11 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 50); // Atualiza o estado quando o scroll ultrapassa 50px
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);  // Escuta o evento de rolagem
+    return () => window.removeEventListener('scroll', handleScroll); // Remove o evento ao desmontar o componente
   }, []);
 
   const navItems = [
@@ -35,20 +37,20 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        <div className="flex items-center justify-between h-20">
           <motion.div
-            className="flex items-center"
+            className="w-[220px]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Code2 className={`h-8 w-8 ${scrolled ? 'text-primary-light' : 'text-white'}`} />
-            <span className={`ml-2 text-xl font-bold ${
-              scrolled ? 'text-primary-dark' : 'text-white'
-            }`}>
-              DynamoCode
-            </span>
+            
+            <img
+              src={scrolled ? logoColorida : logoBranca}
+              alt="Logo"
+              className="transition-all duration-300"
+            />
           </motion.div>
-          
+
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <motion.a
