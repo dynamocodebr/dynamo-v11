@@ -50,8 +50,8 @@ const services = [
   },
   {
     icon: MessageSquare,
-    title: 'Suporte 24/7',
-    description: 'Atendimento especializado e manutenção contínua.',
+    title: 'Suporte Personalizado',
+    description: 'Oferecemos assistência sob medida para atender às suas necessidades, sempre que você precisar.',
   },
 ];
 

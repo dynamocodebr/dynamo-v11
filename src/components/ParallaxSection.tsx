@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Rocket, Sparkles, Target, Activity, Zap } from 'lucide-react';
+import { Rocket, Sparkles, Target, Activity, Zap, CalendarClock  } from 'lucide-react';
 
 const features = [
   {
@@ -143,7 +143,7 @@ const ParallaxSection = () => {
                   <div>
                     <div className="flex items-center">
                       <div className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse" />
-                      <span className="font-medium text-gray-900">Sistema Online</span>
+                      <span className="font-medium text-gray-900">Servidores Online</span>
                     </div>
                     <p className="text-sm text-gray-500">Funcionando normalmente</p>
                   </div>
@@ -159,13 +159,13 @@ const ParallaxSection = () => {
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Activity className="w-5 h-5 text-primary-light" />
+                    <CalendarClock  className="w-5 h-5 text-primary-light" />
                   </div>
                   <div>
                     <div className="flex items-center">
-                      <span className="font-medium text-gray-900">Analytics</span>
+                      <span className="font-medium text-gray-900">Desenvolvimento Ágil</span>
                     </div>
-                    <p className="text-sm text-gray-500">Crescimento de 32% este mês</p>
+                    <p className="text-sm text-gray-500">Soluções rápidas e eficientes para o seu negócio</p>
                   </div>
                 </div>
               </motion.div>
