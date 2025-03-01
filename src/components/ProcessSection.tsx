@@ -41,7 +41,7 @@ const ProcessSection = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0.6]);
 
   return (
-    <section className="relative py-32 bg-white overflow-hidden">
+    <section id="process" className="relative py-32 bg-white overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <motion.div
@@ -105,7 +105,7 @@ const ProcessSection = () => {
                       </motion.div>
                     </div>
 
-                    <div className="pt-8 text-center relative z-10">
+                    <div className="pt-8 text-center">
                       <motion.div
                         whileHover={{ scale: 1.1 }}
                         className="inline-block p-3 rounded-lg bg-primary-light/10 mb-6"
@@ -116,7 +116,7 @@ const ProcessSection = () => {
                       <h3 className="text-xl font-semibold text-gray-900 mb-4">
                         {step.title}
                       </h3>
-                      <p className="text-gray-600 mb-6 h-[72px]">
+                      <p className="text-gray-600 mb-6">
                         {step.description}
                       </p>
 

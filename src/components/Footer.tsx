@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Code2, Facebook, Twitter, Instagram, Linkedin, Phone } from 'lucide-react';
+import WhatsApp from '../svg/whatsapp-icon.svg';
 
 const Footer = () => {
   return (
@@ -99,17 +100,14 @@ const Footer = () => {
               Transformando ideias em experiências digitais memoráveis desde 2024.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-gray-300">
+              {/*<a href="#" className="text-gray-400 hover:text-gray-300">
                 <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-300">
+              </a>*/}
+              <a href="https://www.instagram.com/dynamocodebr/" target="_blank" className="text-gray-400 hover:text-gray-300">
                 <Instagram className="h-6 w-6" />
               </a>
               <a href="#" className="text-gray-400 hover:text-gray-300">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-300">
-                <Linkedin className="h-6 w-6" />
+                <Phone className="h-6 w-6" />
               </a>
             </div>
           </div>
@@ -121,22 +119,22 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-base text-gray-300 hover:text-white">
+                <a href="#services" className="text-base text-gray-300 hover:text-white">
                   Desenvolvimento Web
                 </a>
               </li>
               <li>
-                <a href="#" className="text-base text-gray-300 hover:text-white">
+                <a href="#services" className="text-base text-gray-300 hover:text-white">
                   E-commerce
                 </a>
               </li>
               <li>
-                <a href="#" className="text-base text-gray-300 hover:text-white">
+                <a href="#services" className="text-base text-gray-300 hover:text-white">
                   SEO
                 </a>
               </li>
               <li>
-                <a href="#" className="text-base text-gray-300 hover:text-white">
+                <a href="#services" className="text-base text-gray-300 hover:text-white">
                   Manutenção
                 </a>
               </li>
@@ -150,22 +148,22 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-base text-gray-300 hover:text-white">
+                <a href="#about" className="text-base text-gray-300 hover:text-white">
                   Sobre
                 </a>
               </li>
               <li>
-                <a href="#" className="text-base text-gray-300 hover:text-white">
-                  Blog
+                <a href="#portfolio" className="text-base text-gray-300 hover:text-white">
+                  Portfólio
                 </a>
               </li>
               <li>
-                <a href="#" className="text-base text-gray-300 hover:text-white">
-                  Carreiras
+                <a href="#process" className="text-base text-gray-300 hover:text-white">
+                  Processo
                 </a>
               </li>
               <li>
-                <a href="#" className="text-base text-gray-300 hover:text-white">
+                <a href="#contact" className="text-base text-gray-300 hover:text-white">
                   Contato
                 </a>
               </li>

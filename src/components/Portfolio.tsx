@@ -141,7 +141,7 @@ const Portfolio = () => {
 
         <div className="relative">
           {/* Main Slider */}
-          <div className="relative h-auto min-h-[750px] sm:h-[600px] mb-6">
+          <div className="relative h-auto min-h-[400px] sm:h-[500px] mb-6">
             {/* Navigation Buttons - Fixed position */}
             <div className="absolute inset-x-0 top-[150px] sm:top-1/2 -translate-y-1/2 z-10 flex justify-between px-4">
               <motion.button
@@ -205,19 +205,11 @@ const Portfolio = () => {
                         >
                           <ExternalLink className="w-6 h-6 text-primary-light" />
                         </motion.a>
-                        <motion.a
-                          href={projects[currentIndex].github}
-                          className="p-3 bg-white rounded-full hover:bg-gray-100 transition-colors duration-200"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <Github className="w-6 h-6 text-primary-light" />
-                        </motion.a>
+                        
                       </div>
                     </motion.div>
                   </div>
 
-                  {/* Project Info */}
                   <div className="text-center lg:text-left p-4 sm:p-8">
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}
@@ -277,15 +269,7 @@ const Portfolio = () => {
                         Ver Projeto
                         <ExternalLink className="w-4 h-4 ml-2" />
                       </motion.a>
-                      <motion.a
-                        href={projects[currentIndex].github}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-full sm:w-auto px-6 py-3 border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center"
-                      >
-                        Código
-                        <Github className="w-4 h-4 ml-2" />
-                      </motion.a>
+                      
                     </motion.div>
                   </div>
                 </div>
