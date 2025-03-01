@@ -105,7 +105,7 @@ const ProcessSection = () => {
                       </motion.div>
                     </div>
 
-                    <div className="pt-8 text-center">
+                    <div className="pt-8 text-center relative z-10">
                       <motion.div
                         whileHover={{ scale: 1.1 }}
                         className="inline-block p-3 rounded-lg bg-primary-light/10 mb-6"
@@ -116,7 +116,7 @@ const ProcessSection = () => {
                       <h3 className="text-xl font-semibold text-gray-900 mb-4">
                         {step.title}
                       </h3>
-                      <p className="text-gray-600 mb-6">
+                      <p className="text-gray-600 mb-6 h-[72px]">
                         {step.description}
                       </p>
 
