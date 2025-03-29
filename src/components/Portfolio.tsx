@@ -1,51 +1,75 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ExternalLink, Github } from 'lucide-react';
+import pfLea from '../img/pf-lea.png';
+import pfHomeBlu from '../img/pf-homeblu.png';
+import pfEventos from '../img/pf-eventos.png';
+import pfBarbearia from '../img/pf-barbearia.png';
+import pfShopping from '../img/pf-shopping.png';
+import pfBikcraft from '../img/pf-bikcraft.png';
+import pfEnergize from '../img/pf-energize.png';
+
 
 const projects = [
   {
-    title: 'E-commerce Fashion',
-    description: 'Loja virtual completa com integração de pagamentos e gestão de estoque. Interface moderna e responsiva com foco na experiência do usuário.',
-    image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    category: 'E-commerce',
-    tags: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-    link: '#',
+    title: 'Terapeuta Léa',
+    description: 'Site One Page desenvolvido para a terapeuta Léa Fischer, destacando sua trajetória, serviços, formas de contato, e etc... Com um design intuitivo e navegação fluida.',
+    image: pfLea,
+    category: 'One Page',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    link: 'https://leamasterterapeuta.com.br/',
+  },
+  {
+    title: 'Home Blu Imóveis',
+    description: 'Site desenvolvido para a imobiliaria Home Blu Imoveis, apresentando os imóveis disponíveis de forma organizada e intuitiva. Conta com  um painel administrativo para cadastro e gerenciamento dos imóveis. ',
+    image: pfHomeBlu,
+    category: 'Imobiliaria',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Wordpress', 'PHP'],
+    link: 'https://homebluimoveis.com.br/',
+  },
+  {
+    title: 'Método Energize',
+    description: 'Site One Page desenvolvido para o Método Energize, apresentando seus serviços de ginástica laboral em empresas, também apresenta um blog com. Com um design leve e intuitivo, destaca os benefícios da prática e facilita o contato para agendamentos.',
+    image: pfEnergize,
+    category: 'One Page',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Wordpress'],
+    link: 'https://metodoenergize.com.br/',
     github: '#'
   },
   {
-    title: 'Blog Corporativo',
-    description: 'Sistema de blog personalizado com CMS headless e analytics avançado. Performance otimizada e SEO amigável.',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    category: 'Blog',
-    tags: ['Next.js', 'GraphQL', 'Prisma', 'PostgreSQL'],
-    link: '#',
+    title: 'Modelo Shopping',
+    description: 'Modelo de site institucional desenvolvido para um possivel shopping. Apresenta categorias de produtos, detalhes individuais e funcionalidades típicas que todo shopping precisa.',
+    image: pfShopping,
+    category: 'Institucional',
+    tags: ['HTML', 'CSS', 'Tailwind CSS', 'React', 'TypeScript'],
+    link: 'https://shopping-center-pi.vercel.app/',
     github: '#'
   },
   {
-    title: 'App Delivery',
-    description: 'Aplicativo de entrega com rastreamento em tempo real e integração com APIs de pagamento e localização.',
-    image: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    category: 'Mobile',
-    tags: ['React Native', 'Firebase', 'Google Maps', 'Redux'],
-    link: '#',
+    title: 'Modelo Barbearia',
+    description: 'Modelo de site institucional desenvolvido para um possivel barbearia. Apresenta toda a estrutura que o negócio precisa',
+    image: pfBarbearia,
+    category: 'Institucional',
+    tags: ['HTML', 'CSS', 'Tailwind CSS', 'React', 'TypeScript'],
+    link: 'https://shopping-center-pi.vercel.app/',
     github: '#'
   },
   {
-    title: 'Dashboard Analytics',
-    description: 'Painel administrativo com visualização de dados em tempo real e relatórios personalizados.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    category: 'Dashboard',
-    tags: ['Vue.js', 'D3.js', 'Express', 'MongoDB'],
-    link: '#',
+    title: 'Modelo Eventos',
+    description: 'Modelo de site institucional desenvolvido para um possivel site de eventos. Apresenta toda a estrutura que o negócio precisa',
+    image: pfEventos,
+    category: 'Institucional',
+    tags: ['HTML', 'CSS', 'Tailwind CSS', 'React', 'TypeScript'],
+    link: 'https://electro-fest.vercel.app/',
     github: '#'
   },
   {
-    title: 'Plataforma EAD',
-    description: 'Sistema completo de ensino à distância com vídeo-aulas, exercícios e certificados automáticos.',
-    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    category: 'Educação',
-    tags: ['React', 'Node.js', 'Socket.io', 'AWS'],
-    link: '#',
+    title: 'Modelo Institucional',
+    description: 'Site desenvolvido para a empresa fictícia Bikcraft, especializada na fabricação de bicicletas elétricas artesanais e personalizadas. Apresenta os modelos disponíveis, detalhes dos produtos, informações sobre seguros e formas de contato.',
+    image: pfBikcraft,
+    category: 'Institucional',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    link: 'https://bikcraft-iota-topaz.vercel.app/',
     github: '#'
   }
 ];
@@ -54,7 +78,7 @@ const Portfolio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const slideInterval = 5000;
+  const slideInterval = 5000000;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -178,7 +202,7 @@ const Portfolio = () => {
                 }}
                 onAnimationStart={() => setIsAnimating(true)}
                 onAnimationComplete={() => setIsAnimating(false)}
-                className="absolute inset-0"
+                className="lg:absolute inset-0"
               >
                 <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-center">
                   {/* Project Image */}
